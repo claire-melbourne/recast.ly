@@ -1,3 +1,4 @@
+// Stateless
 var VideoListEntry = () => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
