@@ -1,9 +1,12 @@
 // Added map function, untested
+import VideoListEntry from './VideoListEntry.js';
 var VideoList = (props) => (
   <div className='video-list'>
-    {props.items.map((item) =>
-      <VideoListEntry item= {item} />
+    {props.videos.map((video) =>
+      <VideoListEntry video= {video} />
     )}
+    {/* {props.videos[0].snippet.title}
+    <img src={props.videos[0].snippet.thumbnails.default.url}></img> */}
 
     {/* <div><h5><em>videoListEntry</em> view goes here</h5></div> */}
   </div>

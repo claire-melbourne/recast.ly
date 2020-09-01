@@ -36,16 +36,20 @@
 //http://youtube.com/watch?v=4ZAEBxGipoA
 //added props.properties in curly braces for thumbnail, title and description
 //is there a way to grab these before they go into videoListEntry
+
+// onClick={this.onListItemInteract.bind(this, 'done')}
+//where does this go????
+
 var VideoListEntry = (props) => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
-      <img className="media-object" src="{props.thumbnail}" alt="" />
+      <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
       {/* video.snippet.thumbnails.default.url */}
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">{props.title}</div>
+      <div className="video-list-entry-title">{props.video.snippet.title}</div>
       {/* video.snippet.title */}
-      <div className="video-list-entry-detail">{props.description}</div>
+      <div className="video-list-entry-detail">{props.video.snippet.description}</div>
       {/*  video.snippet.description*/}
     </div>
   </div>
