@@ -1,41 +1,25 @@
-// Statefull
-class VideoList extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   videos: exampleVideoData
-    // };
-  }
+// Added map function, untested
+var VideoList = (props) => (
+  <div className='video-list'>
+    {props.items.map((item) =>
+      <VideoListEntry item= {item} />
+    )}
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     done: false,
-  //     mouseEnter: false,
-  //     mouseLeave: true,
-  //   };
-  // }
+    {/* <div><h5><em>videoListEntry</em> view goes here</h5></div> */}
+  </div>
+);
 
-  // var GroceryList = (props) => (
-  //   //list comes in as props
-  //   <div>
-  //     <h2>Grocery List</h2>
-  //     <ul>
-  //     {props.items.map((item) =>
-  //     <GroceryListItem item= {item} />
-  //     )}
-  //     </ul>
-  //   </div>
-  // )
-
-  // <div className="video-list">
-  //   <div><h5><em>videoListEntry</em> view goes here</h5></div>
-  //   <div><h5><em>videoListEntry</em> view goes here</h5></div>
-  //   <div><h5><em>videoListEntry</em> view goes here</h5></div>
-  //   <div><h5><em>videoListEntry</em> view goes here</h5></div>
-  //   <div><h5><em>videoListEntry</em> view goes here</h5></div>
-  // </div>
-}
+// var GroceryList = (props) => (
+//   //list comes in as props
+//   <div>
+//     <h2>Grocery List</h2>
+//     <ul>
+// {props.items.map((item) =>
+// <GroceryListItem item= {item} />
+// )}
+//     </ul>
+//   </div>
+// )
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
