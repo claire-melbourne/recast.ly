@@ -40,16 +40,20 @@
 // onClick={this.onListItemInteract.bind(this, 'done')}
 //where does this go????
 
-var VideoListEntry = (props) => (
+var VideoListEntry = ({video, videoClickHandler}) => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
-      <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
+      <img className="media-object" src={video.snippet.thumbnails.default.url} alt="" />
       {/* video.snippet.thumbnails.default.url */}
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">{props.video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={() => {
+        videoClickHandler(video);
+      }} >
+        {video.snippet.title}
+      </div>
       {/* video.snippet.title */}
-      <div className="video-list-entry-detail">{props.video.snippet.description}</div>
+      <div className="video-list-entry-detail">{video.snippet.description}</div>
       {/*  video.snippet.description*/}
     </div>
   </div>

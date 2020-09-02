@@ -1,9 +1,11 @@
 // TODO: Render the `App` component to the DOM
 import App from './components/App.js'; //referencing script file in the compile
+import searchYouTube from './components/searchYouTube.js'; //referencing script file in the compile
+import YOUTUBE_API_KEY from './components/youtube.js'; //referencing script file in the compile
 // import VideoList from './components/VideoList.js';
 
 ReactDOM.render(
-  <App />, document.getElementById('app')
+  <App searchYouTube={searchYouTube} API_KEY={YOUTUBE_API_KEY}/>, document.getElementById('app')
 );
 // ReactDOM.render(
 //   <Search />, document.getElementById('search')
