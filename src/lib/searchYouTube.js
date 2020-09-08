@@ -1,6 +1,6 @@
-/*or v3?*/
+
 var searchYouTube = ({key, query, max = 5}, callback) => {
-  $.get('https://www.googleapis.com/youtube/v4/search', {
+  $.get('https://www.googleapis.com/youtube/v3/search', {
     part: 'snippet',
     key: key,
     q: query,
@@ -13,10 +13,11 @@ var searchYouTube = ({key, query, max = 5}, callback) => {
         callback(items);
       }
     })
-    .failed(({responseJSON}) => {
-      responseJSON.error.errors.forEach((err) => console.error(err));
+    .fail(({responseJSON}) => {
+      responseJSON.error.errors.forEach((err) =>
+        console.error(err)
+      );
     });
-
 };
 
 export default searchYouTube;
